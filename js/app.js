@@ -9,7 +9,7 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    const image = product.image;
+    const image = product.image; //bug fixed
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `
