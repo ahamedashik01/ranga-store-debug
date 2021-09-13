@@ -13,7 +13,7 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML =
-      ` <div class="card w-100 h-100 shadow-lg">
+      ` <div class="card w-100 h-100 shadow-lg rounded-3" id="card">
           <img src="${image}" style="width:50%; height:50%;" class="card-img-top w-75 d-inline-block mx-auto p-3" alt="...">
           <div class="card-body">
               <h5 class="card-title fst-normal text-success">${product.title}</h5>
@@ -23,13 +23,14 @@ const showProducts = (products) => {
           </div>
           <div class="d-flex m-3">
               <button onclick="addToCart(${product.id},${product.price})" class ="btn btn-outline-secondary w-50 me-4">Add to cart</button>
-              <button class ="btn btn-secondary w-50 ">Add to cart</button>
+              <button class ="btn btn-secondary w-50 ">Details</button>
           </div>
         </div>    
          `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+// add to cart 
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
