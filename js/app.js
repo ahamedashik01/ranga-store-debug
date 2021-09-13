@@ -16,12 +16,12 @@ const showProducts = (products) => {
       ` <div class="card w-100 h-100 shadow-lg rounded-3" id="card">
           <img src="${image}" style="width:50%; height:50%;" class="card-img-top w-75 d-inline-block mx-auto p-3" alt="...">
           <div class="card-body">
-              <h5 class="card-title fst-normal text-success">${product.title}</h5>
+              <h5 class="card-title fs-6 fw-bold text-color">${product.title}</h5>
               <p class="card-text"><span class="text-dark fw-light fst-italic">Category: ${product.category}</p>
-              <p>Average Rating : ${product.rating.rate} (${product.rating.count})</p>
-              <h5 class="card-text"><span class="text-success fw-bolder fs-3">Price: $ ${product.price}</h5>
+              <p class ="text-secondary"><span class="star fw-bold"><i class="fas fa-star "></i> ${product.rating.rate}</span><span class="fs">(${product.rating.count})</span></p>
+              <h5 class="card-text"><span class="text-color fw-bolder fs-5">Price: $${product.price}</h5>
           </div>
-          <div class="d-flex m-3">
+          <div class="d-flex p-3 ">
               <button onclick="addToCart(${product.id},${product.price})" class ="btn btn-outline-secondary w-50 me-4">Add to cart</button>
               <button class ="btn btn-secondary w-50 ">Details</button>
           </div>
