@@ -18,7 +18,7 @@ const showProducts = (products) => {
           <div class="card-body">
               <h5 class="card-title fst-normal text-success">${product.title}</h5>
               <p class="card-text"><span class="text-dark fw-light fst-italic">Category: ${product.category}</p>
-              <p>Avg Rating : ${product.rating.rate} (${product.rating.count})</p>
+              <p>Average Rating : ${product.rating.rate} (${product.rating.count})</p>
               <h5 class="card-text"><span class="text-success fw-bolder fs-3">Price: $ ${product.price}</h5>
           </div>
           <div class="d-flex m-3">
