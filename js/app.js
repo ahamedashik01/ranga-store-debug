@@ -12,17 +12,21 @@ const showProducts = (products) => {
     const image = product.image; //bug fixed
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `
-      <div class="single-product">
-        <div>
-          <img class="product-image" src=${image}></img>
-        </div>
-        <h3>${product.title}</h3>
-        <p>Category: ${product.category}</p>
-        <h2>Price: $ ${product.price}</h2>
-        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-        <button id="details-btn" class="btn btn-danger">Details</button></div>
-      `;
+    div.innerHTML =
+      ` <div class="card w-100 h-100 shadow-lg">
+          <img src="${image}" style="width:50%; height:50%;" class="card-img-top w-75 d-inline-block mx-auto p-3" alt="...">
+          <div class="card-body">
+              <h5 class="card-title fst-normal text-success">${product.title}</h5>
+              <p class="card-text"><span class="text-dark fw-light fst-italic">Category: ${product.category}</p>
+              <p>Avg Rating : ${product.rating.rate} (${product.rating.count})</p>
+              <h5 class="card-text"><span class="text-success fw-bolder fs-3">Price: $ ${product.price}</h5>
+          </div>
+          <div class="d-flex m-3">
+              <button onclick="addToCart(${product.id},${product.price})" class ="btn btn-outline-secondary w-50 me-4">Add to cart</button>
+              <button class ="btn btn-secondary w-50 ">Add to cart</button>
+          </div>
+        </div>    
+         `;
     document.getElementById("all-products").appendChild(div);
   }
 };
@@ -37,7 +41,7 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseFloat(element); // bug
+  const converted = parseFloat(element);
   return converted;
 };
 
